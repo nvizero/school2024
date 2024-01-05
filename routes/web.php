@@ -25,13 +25,12 @@ Route::get('registration', [CustomAuthController::class, 'registration'])->name(
 Route::post('custom-registration', [CustomAuthController::class, 'customRegistration'])->name('register.custom');
 Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
 
-//Route::resource('products', ProductController::class)->middleware('auth');
 
 Route::resource('products', ProductController::class);
 
-Route::get('/a', function () {
-    echo asset('images/file.txt');
-    // return view('welcome');
+
+Route::get('/', function () {
+     return view('welcome');
 });
 
 

@@ -24,9 +24,11 @@
 @endif
 
 <form action="{{ route('products.store') }}" method="POST">
+
     @csrf
 
-    <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+     <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+
      <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">

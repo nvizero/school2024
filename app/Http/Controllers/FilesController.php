@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\File;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use App\Http\Requests\StoreFileRequest;
@@ -16,7 +17,8 @@ class FilesController extends Controller
      */
     public function index()
     {
-        $files = File::all();
+        // $files = File::all();
+        $files = DB::table("files")->get();
 
         return view('files.index', [
             'files' => $files

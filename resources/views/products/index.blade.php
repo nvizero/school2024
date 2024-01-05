@@ -18,17 +18,19 @@
     <table class="table table-bordered">
         <tr>
             <th>No</th>
-            <th>create by user Name</th>
             <th>Name</th>
             <th>Details</th>
+            <th>create by user Name</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($products as $product)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>{{ $product->user->name }}</td>
             <td>{{ $product->name }}</td>
             <td>{{ $product->detail }}</td>
+
+            <td>{{ $product->user->email }}/{{ $product->user->level }}</td>
+
             <td>
                 <form action="{{ route('products.destroy',$product->id) }}" method="POST">
 
