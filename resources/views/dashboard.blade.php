@@ -2,7 +2,6 @@
 
 
 @section('content')
-
     <nav class="navbar navbar-light navbar-expand-lg mb-5" style="background-color: #e3f2fd;">
         <div class="container">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -20,11 +19,13 @@
                     </li>
                     @else
 
-                    @if(Auth::user()->level==1)
-                            do something in level 2
-                    @elseif(Auth::user()->level==2)
-                            do something in level 2
-                    @endif
+                    {{Auth::user()->name}}
+                    /
+                    {{Auth::user()->id}}
+                    {{$user->products()}}
+
+
+
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('signout') }}">Logout</a>
                     </li>

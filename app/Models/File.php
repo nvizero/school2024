@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class File extends Model
 {
+    use HasFactory;
 
     protected $table = 'files';
 
@@ -16,6 +17,4 @@ class File extends Model
         'type',
         'size'
     ];
-
-    use HasFactory;
 }
