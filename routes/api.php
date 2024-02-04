@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Api\AuthController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,6 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+
+Route::middleware(['basemid'])->group(function () {
+    Route::post('login', [AuthController::class, 'login'] );
+    Route::post('register', [AuthController::class, 'register'] );
+
+// Route::middleware(['restrictip'])->namespace('Api')->prefix('v1')->group(function () {
+//     //預約
+//     Route::post('reggame', 'GameController@reggame');
+//     Route::post('exchange', 'GameController@exchange');
 });

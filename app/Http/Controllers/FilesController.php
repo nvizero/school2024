@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use App\Http\Requests\StoreFileRequest;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\UsersImport;
 
 class FilesController extends Controller
 {
@@ -33,6 +35,23 @@ class FilesController extends Controller
     public function create()
     {
         return view('files.create');
+    }
+
+    public function import(StoreFileRequest $request)
+    {
+        // $fileName = auth()->id() . '_' . time() . '.'. $request->file->extension();
+        // $fileName = auth()->id() . '_' . time() . '.'. $request->file->extension();
+
+
+        // $request->file->move(public_path('imgs'), $fileName);
+        // print_r(request()->file('file'));
+        Excel::import(new UsersImport, request()->file('file'));
+        // Excel::import(new UsersExport, request()->file('your_file'));
+        // $type = $request->file->getClientMimeType();
+        // $size = $request->file->getSize();
+
+
+        return redirect()->route('files.index')->withSuccess(__('File added successfully.'));
     }
 
     /**

@@ -18,6 +18,7 @@ use App\Http\Controllers\FilesController;
 */
 
 Route::get('export', [CustomAuthController::class, 'export']);
+
 Route::get('dashboard', [CustomAuthController::class, 'dashboard']);
 Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name('login.custom');
@@ -38,4 +39,5 @@ Route::get('/', function () {
 Route::get('/files', [FilesController::class , 'index'])->name('files.index');
 Route::get('/files/add', [FilesController::class , 'create'])->name('files.create');
 Route::post('/files/add', [FilesController::class , 'store'])->name('files.store');
+Route::post('/files/import', [FilesController::class , 'import'])->name('files.import');
 

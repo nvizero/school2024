@@ -2,13 +2,13 @@
 
 namespace App\Exports;
 
-use App\Models\User;
+use App\Models\Product;
 use Maatwebsite\Excel\Concerns\FromCollection;
 
 class UsersExport implements FromCollection
 {
     public function collection()
     {
-        return User::all();
+        return Product::limit(10)->get();
     }
 }
