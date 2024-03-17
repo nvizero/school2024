@@ -9,6 +9,11 @@
     @yield('css')
 </head>
 <body>
+        <form action="{{ route('auth.signOut') }}" method="POST">
+            @csrf
+            <button type="submit" class="btn btn-danger">登出</button>
+        </form>
+
         <div class="container">
            @yield('content')
         </div>
