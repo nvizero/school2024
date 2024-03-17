@@ -22,7 +22,6 @@
                     {{Auth::user()->name}}
                     /
                     {{Auth::user()->id}}
-                    {{$user->products()}}
 
 
 
