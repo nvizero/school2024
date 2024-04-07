@@ -18,12 +18,12 @@ use App\Http\Controllers\FilesController;
 */
 
 Route::get('export', [CustomAuthController::class, 'export']);
+Route::get('f1', [CustomAuthController::class, 'f1']);
 
 Route::get('dashboard', [CustomAuthController::class, 'dashboard']);
 Route::get('login', [CustomAuthController::class, 'index'])->name('login');
 Route::post('signOut', [CustomAuthController::class, 'signOut'])->name('auth.signOut');
 Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name('login.custom');
-
 Route::get('registration', [CustomAuthController::class, 'registration'])->name('register-user');
 Route::post('custom-registration', [CustomAuthController::class, 'customRegistration'])->name('register.custom');
 Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');

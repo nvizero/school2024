@@ -11,8 +11,7 @@ class ProductController extends Controller
     public function __construct()
     {
         //在登入的情況下才可以用
-        $this->middleware('auth');
-
+        // $this->middleware('auth');
     }
     /**
      * Display a listing of the resource.

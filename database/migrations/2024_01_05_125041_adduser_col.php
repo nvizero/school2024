@@ -15,8 +15,8 @@ class AdduserCol extends Migration
     {
         //
         Schema::table('users', function (Blueprint $table) {
-            $table->string('level');
-            $table->string('able');
+            $table->string('level')->nullable(true);
+            $table->string('able')->nullable(true);;
         });
     }
 

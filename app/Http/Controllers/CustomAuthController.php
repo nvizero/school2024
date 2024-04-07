@@ -18,6 +18,12 @@ class CustomAuthController extends Controller
         return view('auth.login');
     }
 
+    //for t1
+    public function f1()
+    {
+        $data['a']="hi ";
+        return view('f1',$data);
+    }
 
     public function customLogin(Request $request)
     {
@@ -56,6 +62,9 @@ class CustomAuthController extends Controller
         ]);
 
         $data = $request->all();
+        $data['level'] = 1;
+        $data['is_admin'] = 1;
+        $data['able'] = 1;
         $check = $this->create($data);
 
         return redirect("dashboard")->withSuccess('You have signed-in');
@@ -67,6 +76,7 @@ class CustomAuthController extends Controller
       return User::create([
         'name' => $data['name'],
         'email' => $data['email'],
+        'level' => 0,
         'password' => Hash::make($data['password'])
       ]);
     }
