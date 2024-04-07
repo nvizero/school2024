@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.backend')
 
 @section('content')
 <div class="row">
@@ -39,7 +39,13 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Detail:</strong>
-                <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail"></textarea>
+                <textarea id="editor1"  class="form-control" style="height:150px" name="detail" placeholder="Detail"></textarea>
+                <script src="//cdn.ckeditor.com/4.10.0/full/ckeditor.js"></script>
+                <script >
+
+                var editor = CKEDITOR.replace( 'editor1' );
+                CKFinder.setupCKEditor( editor );
+                </script>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

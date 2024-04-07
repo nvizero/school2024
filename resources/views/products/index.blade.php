@@ -27,7 +27,7 @@
         <tr>
             <td>{{ ++$i }}</td>
             <td>{{ $product->name }}</td>
-            <td>{{ $product->detail }}</td>
+            <td>{{ strConv($product->detail) }}</td>
 
             <td>{{ $product->user->email }}/{{ $product->user->level }}</td>
 
